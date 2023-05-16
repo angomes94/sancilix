@@ -1,6 +1,7 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import Navbar from "../Components/navbar"
+import { LanguageProvider } from '@/app/Context/languangeContext'
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700"],
@@ -15,13 +16,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}  className={roboto.className}>
+   
+    <html >
+       <LanguageProvider>
+      <body  className={roboto.className}>
         <Navbar/>
         <main>
         {children}
         </main>
        </body>
+       </LanguageProvider>
     </html>
+    
   )
 }
