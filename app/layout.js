@@ -2,6 +2,9 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import Navbar from "../Components/navbar"
 import { LanguageProvider } from '@/app/Context/languangeContext'
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700"],
