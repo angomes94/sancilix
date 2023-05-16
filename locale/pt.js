@@ -6,6 +6,7 @@ export const translations = {
   team1Title: 'André Felix',
   team1Text: "phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna",
   team1Span: " - Arquiteto",
+  contact: "Contacto: ",
   team1Phone: "+351 967505436",
   team2Title: 'Délcio Santos',
   team2Span: " - Encarregado Geral",
