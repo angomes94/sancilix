@@ -13,10 +13,8 @@ export default function HomePage() {
 
   return (
   <div className=' flex flex-col w-full justify-center items-center'>
-  <div className=' w-full '>
-    
-   <SlideShow/>
-    
+  <div className=' w-full'>
+   <SlideShow/>    
   </div>
   <div className=' flex flex-col justify-center items-center p-5'>
     <h1 className='py-5'>{translations.aboutUsTitle}</h1>

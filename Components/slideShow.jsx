@@ -43,6 +43,7 @@ export default function SlideShow() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
+        
       >
         {images ? (images.map((image, index) => (
           <SwiperSlide key={index}>
