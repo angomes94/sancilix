@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, {useContext} from 'react'
 import { LanguageContext } from '@/app/Context/languangeContext'
 
-export default function navbar() {
+export default function Navbar() {
 
     const { translations, language, setLanguage } = useContext(LanguageContext);
 
