@@ -1,16 +1,20 @@
-import React from 'react'
-import { client } from '@/lib/sanityClient';
+import { getProjects, getProjectById } from "@/lib/fetching";
 
+
+export async function generateStaticParams() {
+
+  const projects = await getProjects()
+
+  return projects.map((project) => ({
+    id: project._id,
+  }));
+}
 
 
 export default async function Page({params}) {
 
+const project = await getProjectById(params.id)
 
-  const query = `*[_type == "project" && _id == "${params.id}"]`;
-
-  const project = await client.fetch(query , { cache: 'force-cache' });
-  
-  console.log(query);
   console.log(project)
 
   return (
