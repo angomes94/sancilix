@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { urlFor } from "../lib/sanityClient";
 import { getSlides } from "@/lib/fetching";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -43,15 +42,12 @@ export default function SlideShow() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        
+        className= " min-h-fit"
       >
-        {images ? (images.map((image, index) => (
+        {(images?.map((image, index) => (
           <SwiperSlide key={index}>
             <img src={urlFor(image.asset).url()} />
-          </SwiperSlide>))) :
-          (<div className=" flex w-full h-screen justify-center items-center ">
-            <FontAwesomeIcon className=' animate-spin text-center text-4xl ' icon={faSpinner} />
-          </div>)
+          </SwiperSlide>)))
         }
       </Swiper>
     </>
