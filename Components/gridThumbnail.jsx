@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 import {Autoplay, EffectCube, Pagination } from "swiper";
 
-export default function GridThumbnail({projectName , projectImages, projectDescription}) {
+export default function GridThumbnail({projectName , projectImages}) {
   return (
     <>
       <Swiper

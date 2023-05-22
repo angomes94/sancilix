@@ -16,7 +16,7 @@ export default function Navbar() {
     };
 
     return (
-        <div className=' w-full h-16'>
+        <div className=' w-full h-16 mb-5'>
             <nav className=' flex flex-row items-center h-full w-full text-blue-950'>
                 <div className='flex flex-1 flex-row px-5'>
                     <Link href="/">

@@ -1,5 +1,6 @@
 import ProjectSlide from "@/Components/projectSlide";
 import { getProjects, getProjectById } from "@/lib/fetching";
+import ProjectText from "@/Components/projectText";
 
 
 
@@ -26,8 +27,10 @@ const project = await getProjectById(params.id)
       <ProjectSlide images={project[0].images}/>
       </div>
       <div className=" flex flex-col justify-center items-center w-full h-1/4 p-10 ">
-      <h1 className="pb-5">{project[0].name}</h1>
-      <p>{project[0].description}</p>
+      <ProjectText  namePT={project[0].namePT} 
+                    nameEN={project[0].nameEN} 
+                    descriptionPT={project[0].descriptionPT} 
+                    descriptionEN={project[0].descriptionEN}/>
       </div>
     </div>
   )
