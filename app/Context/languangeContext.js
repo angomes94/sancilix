@@ -7,10 +7,10 @@ import { translations as ptTranslations } from '../../locale/pt';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('pt');
+  const [language, setLanguage] = useState('PT');
 
   const getTranslations = () => {
-    return language === 'pt' ? ptTranslations : enTranslations;
+    return language === 'PT' ? ptTranslations : enTranslations;
   };
 
   return (

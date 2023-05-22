@@ -18,7 +18,7 @@ export default function ProjectSlide({ images }) {
   return (
     <>
       <Swiper
-        style={{ "--swiper-navigation-color": "#fff", "--swiper-pagination-color": "#fff" }}
+        style={{ "--swiper-navigation-color": "#000000", "--swiper-pagination-color": "#000000" }}
         loop={true}
         spaceBetween={10}
         navigation={true}
@@ -28,7 +28,7 @@ export default function ProjectSlide({ images }) {
       >
         {images.map((image) => (
           <SwiperSlide key={image._key} className="text-center font-size-18 bg-white flex justify-center items-center">
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover" />
+            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain" />
           </SwiperSlide>
         ))}
       </Swiper>

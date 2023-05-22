@@ -1,10 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { urlFor } from "../lib/sanityClient";
-import { getSlides } from "@/lib/fetching";
-
-
 
 
 import "swiper/css";
@@ -13,24 +10,16 @@ import "swiper/css/navigation";
 
 
 
-
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-export default function SlideShow() {
-
-  const [images, setImages] = useState(null)
-
-  useEffect(() => {
-    async function fetchSlides() {
-      setImages(await getSlides());
-    }
-    fetchSlides();
-  }, []);
-
+export default function SlideShow({ images }) {
 
   return (
+
     <>
+
       <Swiper
+        style={{ "--swiper-navigation-color": "#000", "--swiper-pagination-color": "#000" }}
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -42,14 +31,15 @@ export default function SlideShow() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className= " min-h-fit"
+        className=" min-h-fit"
       >
         {(images?.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={urlFor(image.asset).url()} />
-          </SwiperSlide>)))
-        }
+            <img className=" object-contain w-full h-full" src={urlFor(image.asset).url()} />
+          </SwiperSlide>
+        )))}
       </Swiper>
+
     </>
   );
 }

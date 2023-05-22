@@ -1,4 +1,5 @@
 import './globals.css'
+import React from "react"
 import { Roboto } from 'next/font/google'
 import Navbar from "../Components/navbar"
 import { LanguageProvider } from '@/app/Context/languangeContext'
@@ -19,17 +20,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-   
+
     <html >
-       <LanguageProvider>
-      <body  className={roboto.className}>
-        <Navbar/>
-        <main>
-        {children}
-        </main>
-       </body>
-       </LanguageProvider>
+      <LanguageProvider>
+        <body className={roboto.className}>
+            <Navbar />
+            <main>
+              {children}
+            </main>
+        </body>
+      </LanguageProvider>
     </html>
-    
+
   )
 }

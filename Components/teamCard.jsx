@@ -15,6 +15,7 @@ export default function TeamCard({portraitUrl, team}) {
         <h1 className=' font-bold text-lg pt-5'>{team === "team1" ? translations.team1Title : translations.team2Title } <span className=' font-thin'>{team === "team1" ? translations.team1Span : translations.team2Span }</span></h1>
         <p className='p-5'>{team === "team1" ? translations.team1Text : translations.team2Text}</p>
         <h1>{translations.contact}<span className=' font-thin'>{team === "team1" ? translations.team1Phone : translations.team2Phone} </span></h1>
+        <h1>{translations.email}<sapn className=" font-thin">{translations.emailAddress} </sapn></h1>
       </div>
   )
 }
