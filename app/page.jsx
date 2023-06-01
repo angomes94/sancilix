@@ -1,12 +1,13 @@
 import React from 'react';
-import SlideShow from '@/components/homePageSlideShow';
-import GridThumbnail from '@/components/gridThumbnail';
+import SlideShow from '@/components/HomePageSlideShow';
+import GridThumbnail from '@/components/GridThumbnail';
 import AboutUs from '@/components/AboutUs';
 import Link from 'next/link';
 import { getSlides, getProjects, getTeamPortraits } from '@/lib/fetching';
 import Contacts from '@/components/Contacts';
 import Slogan from '@/components/Slogan';
 import Navbar from '@/components/Navbar';
+
 
 
 
@@ -38,7 +39,7 @@ export default async function HomePage() {
       </div>
       <div id='projects' className=' grid grid-cols-1 gap-10 m-10 sm:grid-cols-2 md:grid-cols-2 '>
         {projects && projects.map((p) => (
-          <Link key={p._id} href={`/project/${p._id}`} className=' duration-300 hover:scale-110 cursor-pointer'>
+          <Link key={p._id} href={`/project/${p._id}`} className=' duration-300 hover:scale-110 hover:opacity-100 opacity-50 cursor-pointer'>
             <GridThumbnail projectName={p.name} projectImages={p.images} projectDescription={p.description} />
           </Link>
         ))}

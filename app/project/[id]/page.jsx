@@ -1,4 +1,4 @@
-import ProjectSlide from "@/components/projectSlide";
+import ProjectSlide from "@/components/ProjectSlide";
 import { getProjects, getProjectById } from "@/lib/fetching";
 import ProjectText from "@/components/ProjectText";
 import ProjectNav from "@/components/ProjectNav";

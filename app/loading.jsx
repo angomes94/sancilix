@@ -1,5 +1,5 @@
 import React from 'react'
-import LoadingSpinner from '@/components/loadingSpinner'
+import LoadingSpinner from '@/components/LoadingSpinner'
 
 
 export default function loading() {
