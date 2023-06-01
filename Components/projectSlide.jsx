@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -11,9 +11,7 @@ import { urlFor } from "@/lib/sanityClient";
 export default function ProjectSlide({ images }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  useEffect(() => {
-    console.log(images[0]._key);
-  }, []);
+  
 
   return (
     <>

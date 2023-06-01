@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext} from 'react';
-import { LanguageContext } from '@/app/Context/languangeContext';
+import { LanguageContext } from '@/app/context/languangeContext';
 
 export default function HomePageBody() {
 

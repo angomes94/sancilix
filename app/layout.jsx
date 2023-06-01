@@ -1,8 +1,8 @@
 import './globals.css'
 import React from "react"
 import { roboto } from '@/lib/fonts'
-import Navbar from "../Components/navbar"
-import { LanguageProvider } from '@/app/Context/languangeContext'
+import Navbar from "../components/Navbar"
+import { LanguageProvider } from '@/app/context/languangeContext'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
@@ -11,7 +11,10 @@ config.autoAddCss = false;
 export const metadata = {
   title: 'Sancilix',
   description: 'Sancilix - Specializing in residential and commercial projects. Quality craftsmanship, project management, design-build, renovations, and more. Bring your vision to life. Contact us today.',
-  keywords: ""
+  keywords: "",
+  icons: {
+    icon: '/logo.png',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -20,7 +23,6 @@ export default function RootLayout({ children }) {
     <html >
       <LanguageProvider>
         <body className={roboto.className}>
-            <Navbar />
             <main>
               {children}
             </main>

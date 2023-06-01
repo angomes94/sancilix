@@ -1,6 +1,9 @@
-import ProjectSlide from "@/Components/projectSlide";
+import ProjectSlide from "@/components/projectSlide";
 import { getProjects, getProjectById } from "@/lib/fetching";
-import ProjectText from "@/Components/projectText";
+import ProjectText from "@/components/ProjectText";
+import ProjectNav from "@/components/ProjectNav";
+
+
 
 
 
@@ -21,9 +24,9 @@ const project = await getProjectById(params.id)
 
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-screen">
-      
-      <div className=" w-full h-3/4 p-10">
+    <div className="flex flex-col justify-center items-center w-full min-h-screen bg-slate-200">
+      <ProjectNav/>
+      <div className=" w-full h-3/4 p-10 mt-10">
       <ProjectSlide images={project[0].images}/>
       </div>
       <div >

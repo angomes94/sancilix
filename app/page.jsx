@@ -1,11 +1,13 @@
 import React from 'react';
-import SlideShow from '@/Components/homePageSlideShow';
-import GridThumbnail from '@/Components/gridThumbnail';
-import AboutUs from '@/Components/Aboutus';
+import SlideShow from '@/components/homePageSlideShow';
+import GridThumbnail from '@/components/gridThumbnail';
+import AboutUs from '@/components/AboutUs';
 import Link from 'next/link';
 import { getSlides, getProjects, getTeamPortraits } from '@/lib/fetching';
-import Contacts from '@/Components/Contacts';
-import Slogan from '@/Components/Slogan';
+import Contacts from '@/components/Contacts';
+import Slogan from '@/components/Slogan';
+import Navbar from '@/components/Navbar';
+
 
 
 
@@ -23,15 +25,16 @@ export default async function HomePage() {
 
   return (
     <div className=' flex flex-col w-full justify-center items-center bg-slate-200'>
-        <div className=' relative w-full'>
-      <Slogan/>
-      <div className=' flex  w-full opacity-75'>
-        {images ? (<SlideShow images={images} />) :
-          (<h1>there are no images</h1>)}
-      </div>
+      <Navbar/>
+      <div className=' relative w-full'>
+        <Slogan />
+        <div className=' flex  w-full '>
+          {images ? (<SlideShow images={images} />) :
+            (<h1>there are no images</h1>)}
+        </div>
       </div>
       <div id='aboutus' className=' flex flex-col justify-center items-center text-center'>
-      <AboutUs teamPortraits={teamPortraits}/>
+        <AboutUs teamPortraits={teamPortraits} />
       </div>
       <div id='projects' className=' grid grid-cols-1 gap-10 m-10 sm:grid-cols-2 md:grid-cols-2 '>
         {projects && projects.map((p) => (
@@ -41,9 +44,7 @@ export default async function HomePage() {
         ))}
         {!projects && <h1>There are no projects</h1>}
       </div>
-     
-        <Contacts/>
-      
+      <Contacts />
     </div>
   )
 }
