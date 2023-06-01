@@ -1,16 +1,12 @@
 import './globals.css'
 import React from "react"
-import { Roboto } from 'next/font/google'
+import { roboto } from '@/lib/fonts'
 import Navbar from "../Components/navbar"
 import { LanguageProvider } from '@/app/Context/languangeContext'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700"],
-  subsets: ['latin']
-})
 
 export const metadata = {
   title: 'Sancilix',

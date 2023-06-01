@@ -6,11 +6,11 @@ import { urlFor } from "../lib/sanityClient";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 
 
-import { Autoplay, Pagination, Navigation } from "swiper";
+
+import { Autoplay, Pagination } from "swiper";
 
 export default function SlideShow({ images }) {
 
@@ -19,7 +19,7 @@ export default function SlideShow({ images }) {
     <>
 
       <Swiper
-        style={{ "--swiper-navigation-color": "#000", "--swiper-pagination-color": "#000" }}
+        style={{ "--swiper-pagination-color": "#000" }}
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -29,8 +29,7 @@ export default function SlideShow({ images }) {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         className=" min-h-fit"
       >
         {(images?.map((image, index) => (

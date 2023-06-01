@@ -26,7 +26,7 @@ const project = await getProjectById(params.id)
       <div className=" w-full h-3/4 p-10">
       <ProjectSlide images={project[0].images}/>
       </div>
-      <div className=" flex flex-col justify-center items-center w-full h-1/4 p-10 ">
+      <div >
       <ProjectText  namePT={project[0].namePT} 
                     nameEN={project[0].nameEN} 
                     descriptionPT={project[0].descriptionPT} 
