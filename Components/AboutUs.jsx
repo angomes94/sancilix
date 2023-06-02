@@ -1,26 +1,22 @@
 "use client";
 import React, { useContext } from 'react';
 import { LanguageContext } from '@/app/context/languangeContext';
-import TeamCard from './TeamCard';
-import { urlFor } from '@/lib/sanityClient';
+import InfoCard from './InfoCard';
 
-export default function AboutUs({ teamPortraits }) {
+export default function AboutUs() {
 
     const { translations } = useContext(LanguageContext);
 
 
-    const team1 = "team1";
-    const team2 = "team2";
-
-
     return (
-            <div className=' flex flex-col justify-center items-center bg-white text-blue-950 p-10 m-10 rounded-3xl' >
+            <div className=' flex flex-col justify-center items-center rounded-3xl bg-white text-blue-950 md:p-10 p-5 m-10 ' >
                 <div className='flex flex-1 flex-col '>
-                    <p className=' font-extralight text-lg'>{translations.aboutUsText}</p>
+                    <p className=' font-extraligh text-xs md:text-lg'>{translations.aboutUsText}</p>
                 </div>
-                <div className=' flex flex-1 flex-row '>
-                    <TeamCard portraitUrl={urlFor(teamPortraits.member1.asset).width(200).height(200).url()} team={team1} />
-                    <TeamCard portraitUrl={urlFor(teamPortraits.member2.asset).width(200).height(200).url()} team={team2} />
+                <div className=' flex flex-1 flex-col md:flex-row  pt-5 '>
+                    <InfoCard title={translations.infoCardTurnKeyTitle} text={translations.infoCardTurnKeyText}/>
+                    <InfoCard title={translations.infoCardRenovationsTitle} text={translations.infoCardRenovationsText}/>
+                    <InfoCard title={translations.infoCardConsultingTitle} text={translations.infoCardConsultingText}/>
                 </div>
             </div>
     )
