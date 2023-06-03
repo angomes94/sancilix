@@ -12,6 +12,8 @@ export const translations = {
   infoCardTurnKeyText: "Custom-made properties, from the beginning of the project to the completion of the construction, we take care of everything",
   infoCardRenovationsText: "We do deep or light renovations in order to make your home more up-to-date and modern",
   infoCardConsultingText: "Take advantage of our team's experience and clarify your doubts with us",
+  buttonProjects: "Projects",
+  buttonRenovations: "Renovations",
   team1Title: 'André Felix',
   team1Span: " - Architect",
   getInTouch: "Get in Touch",

@@ -12,6 +12,8 @@ export const translations = {
   infoCardTurnKeyText: "Imóveis feitos à medida, desde o inicio do projeto à conclusão da obra, nós tratamos de tudo",
   infoCardRenovationsText: "Fazemos remodelações profundas ou ligeiras de forma a tornar a sua habitação mais atual e moderna",
   infoCardConsultingText: "Tire proveito da experiência da nossa equipa e esclareça as suas duvidas connosco",
+  buttonProjects: "Projetos",
+  buttonRenovations: "Renovações",
   team1Title: 'André Felix',
   team1Span: " - Arquiteto",
   getInTouch: "Contactos",

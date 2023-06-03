@@ -1,5 +1,5 @@
 import ProjectSlide from "@/components/ProjectSlide";
-import { getProjects, getProjectById } from "@/lib/fetching";
+import { getAllProjects, getProjectById} from "@/lib/fetching";
 import ProjectText from "@/components/ProjectText";
 import ProjectNav from "@/components/ProjectNav";
 
@@ -10,7 +10,7 @@ import ProjectNav from "@/components/ProjectNav";
 
 export async function generateStaticParams() {
 
-  const projects = await getProjects()
+  const projects = await getAllProjects()
 
   return projects.map((project) => ({
     id: project._id,
