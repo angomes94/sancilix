@@ -25,7 +25,7 @@ export default function ProjectSlide({ images }) {
         className="w-full h-96"
       >
         {images.map((image) => (
-          <SwiperSlide key={image._key} className="text-center font-size-18 bg-white flex justify-center items-center">
+          <SwiperSlide key={image._key} className="text-center font-size-18 bg-slate-200 flex justify-center items-center">
             <img src={urlFor(image.asset).url()} className="w-full h-full object-contain" />
           </SwiperSlide>
         ))}
@@ -42,7 +42,7 @@ export default function ProjectSlide({ images }) {
       >
         {images.map((image) => (
           <SwiperSlide key={image._key} className="w-1/4 h-full opacity-40">
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover" />
+            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover hover:cursor-pointer" />
           </SwiperSlide>
         ))}
       </Swiper>

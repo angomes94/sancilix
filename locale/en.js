@@ -5,6 +5,7 @@ export const translations = {
   aboutUsTitle: 'About us',
   slogan1: "Welcome to Sancilix",
   slogan2: "we turn your dreams into reality",
+  aboutUsTitle: "who are we?",
   aboutUsText: "Sancilix is a civil construction company that provides its customers with a construction and monitoring service at all stages of the works. Founded in 2021, it already has a range of completed and ongoing works, composed by a team with vast experience in the field, who applies all their knowledge to the detail and development of the work. In this way, our company carries out not only renovations but also all phases of the work until the final delivery, turnkey service. Raising comfort standards in each executed project, aiming not only at the quality of the final result but mainly at customer satisfaction and exceeding expectations.",  
   infoCardTurnKeyTitle: "TurnKey",
   infoCardRenovationsTitle: "Renovations",

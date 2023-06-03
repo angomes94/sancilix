@@ -5,9 +5,8 @@ import { getSlides, getProjects, getTeamPortraits, getRenovations } from '@/lib/
 import Contacts from '@/components/Contacts';
 import Slogan from '@/components/Slogan';
 import Navbar from '@/components/Navbar';
-import TeamCard from '@/components/TeamCard';
-import { urlFor } from '@/lib/sanityClient';
 import Projects from '@/components/Projects';
+import Team from '@/components/Team';
 
 
 
@@ -37,13 +36,10 @@ export default async function HomePage() {
             (<h1>there are no images</h1>)}
         </div>
       </div>
-      <div id='aboutus' className=' flex flex-col justify-center items-center text-center'>
+      <div className=' flex flex-col justify-center items-center text-center'>
         <AboutUs teamPortraits={teamPortraits} />
       </div>
-      <div className=' w-full flex flex-row justify-center items-center p-5 '>
-      <TeamCard portraitUrl={urlFor(teamPortraits.member1.asset).width(200).height(200).url()} team={"team1"} />
-      <TeamCard portraitUrl={urlFor(teamPortraits.member2.asset).width(200).height(200).url()} team={"team2"} />
-      </div>
+      <Team teamPortraits={teamPortraits}/>
       <Projects projects={projects} renovations={renovations}/>
       <Contacts />
     </div>

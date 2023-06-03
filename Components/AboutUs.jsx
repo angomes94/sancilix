@@ -9,14 +9,17 @@ export default function AboutUs() {
 
 
     return (
-            <div className=' flex flex-col justify-center items-center rounded-3xl bg-white text-blue-950 md:p-10 p-5 m-10 ' >
-                <div className='flex flex-1 flex-col '>
-                    <p className=' font-extraligh text-xs md:text-lg'>{translations.aboutUsText}</p>
+            <div id='aboutus' className=' relative flex flex-col md:flex-row ' >
+                <div className='flex flex-col flex-1 justify-center items-center bg-transparent  md:bg-slate-400 rounded-r-full mt-5 '>
+                    <h1 className='absolute top-5 left-3 md:top-16 md:left-12 font-extrabold uppercase text-xl md:text-6xl'>{translations.aboutUsTitle}</h1>
+                    <p className=' font-extraligh text-xs text-start md:text-lg p-10'>{translations.aboutUsText}</p>
                 </div>
-                <div className=' flex flex-1 flex-col md:flex-row  pt-5 '>
+                <div className=' flex flex-1  justify-center  '>
+                    <div className='flex flex-col '>
                     <InfoCard title={translations.infoCardTurnKeyTitle} text={translations.infoCardTurnKeyText}/>
                     <InfoCard title={translations.infoCardRenovationsTitle} text={translations.infoCardRenovationsText}/>
                     <InfoCard title={translations.infoCardConsultingTitle} text={translations.infoCardConsultingText}/>
+                    </div>
                 </div>
             </div>
     )

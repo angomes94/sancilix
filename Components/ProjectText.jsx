@@ -7,10 +7,10 @@ export default function ProjectText({namePT, nameEN, descriptionPT, descriptionE
     const {language} = useContext(LanguageContext);
 
   return (
-    <div className=" flex flex-col justify-center items-center w-full h-1/4 p-10 bg-white rounded-3xl ">
+    <div className=" flex flex-col justify-center items-center w-full h-1/4 p-10 bg-white">
         {language === "PT" ? 
         ( <div>
-            <h1 className='py-5 text-2xl underline underline-offset-4' >{namePT}</h1>
+            <h1 className='py-5 text-2xl underline underline-offset-8 text-center' >{namePT}</h1>
             <p className=' font-extralight'>{descriptionPT}</p>
             </div>) : 
           (<div>
