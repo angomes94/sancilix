@@ -1,0 +1,23 @@
+"use client";
+import React,{useContext} from 'react'
+import { LanguageContext } from '@/app/context/languangeContext';
+
+export default function ProjectText({namePT, nameEN, descriptionPT, descriptionEN}) {
+
+    const {language} = useContext(LanguageContext);
+
+  return (
+    <div className=" flex flex-col justify-center items-center w-full h-1/4 p-10 bg-white">
+        {language === "PT" ? 
+        ( <div>
+            <h1 className='py-5 text-2xl underline underline-offset-8 text-center' >{namePT}</h1>
+            <p className=' font-extralight'>{descriptionPT}</p>
+            </div>) : 
+          (<div>
+            <h1 className='py-5 text-2xl underline underline-offset-4'>{nameEN}</h1>
+            <p className='font-extralight'>{descriptionEN}</p>
+            </div>)}
+        
+    </div>
+  )
+}
