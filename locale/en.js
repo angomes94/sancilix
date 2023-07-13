@@ -17,6 +17,8 @@ export const translations = {
   buttonRenovations: "Renovations",
   team1Title: 'André Felix',
   team1Span: " - Architect",
+  slideBefore: "before",
+  slideAfter: "after",
   getInTouch: "Get in Touch",
   contact: "Contact: ",
   email: "E-mail: ",

@@ -26,7 +26,7 @@ export default function ProjectSlide({ images }) {
       >
         {images.map((image) => (
           <SwiperSlide key={image._key} >
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain " />
+            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain md:p-20 " />
           </SwiperSlide>
         ))}
       </Swiper>

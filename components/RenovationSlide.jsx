@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -7,16 +7,20 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import { urlFor } from "@/lib/sanityClient";
+import { LanguageContext } from "@/app/context/languangeContext";
 
 export default function RenovationSlide({ images }) {
+
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  const { translations } = useContext(LanguageContext);
 
 
 
   return (
     <div className=" w-full h-full p-5 md:p-10">
       <Swiper
-        style={{ "--swiper-navigation-color": "#000000", "--swiper-pagination-color": "#000000" }}
+        style={{ "--swiper-navigation-color": "#172554", "--swiper-pagination-color": "#172554" }}
         loop={true}
         spaceBetween={10}
         navigation={true}
@@ -27,13 +31,13 @@ export default function RenovationSlide({ images }) {
       >
         {images.map((image, index) => (
     <SwiperSlide key={index}>
-      <div className=" w-full h-full flex flex-col md:flex-row justify-center items-center">
-        <div className="w-1/2 h-full  md:h-1/2 md:w-full">
-          <h1 className=" text-center ">Antes</h1>
+      <div className=" w-full h-full flex flex-col md:flex-row justify-center items-center md:p-20">
+        <div className="w-1/2 h-full  md:h-1/2 md:w-full md:pr-2">
+          <h1 className=" font-semibold text-xl text-center pb-3 ">{translations.slideBefore}</h1>
           <img src={urlFor(image.asset).url()} className="w-full h-full object-contain" />
         </div>
-        <div className="w-1/2 h-full md:h-1/2 md:w-full">
-          <h1 className=" text-center ">Depois</h1>
+        <div className="w-1/2 h-full md:h-1/2 md:w-full md:pl-2">
+          <h1 className="font-semibold text-xl text-center pb-3 ">{translations.slideAfter}</h1>
         <img src={urlFor(image.asset).url()} className="w-full h-full object-contain" />
         </div>
       </div>

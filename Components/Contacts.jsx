@@ -8,7 +8,7 @@ export default function Contacts() {
     const { translations } = useContext(LanguageContext);
 
     const sendEmail = (e) => {
-        /*e.preventDefault();
+        /* e.preventDefault();
 
         emailjs
             .sendForm(
