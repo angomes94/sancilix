@@ -15,17 +15,6 @@ export default {
         validation: (Rule) => Rule.required().max(100),
       },
       {
-        name: 'descriptionPT',
-        title: 'Description PT',
-        type: 'text',
-        validation: (Rule) => Rule.required().max(500),
-      },{
-        name: 'descriptionEN',
-        title: 'Description EN',
-        type: 'text',
-        validation: (Rule) => Rule.required().max(500),
-      },
-      {
         name: 'images',
         title: 'Images',
         type: 'array',

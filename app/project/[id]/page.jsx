@@ -1,6 +1,6 @@
 import ProjectSlide from "@/components/ProjectSlide";
-import { getAllProjects, getProjectById} from "@/lib/fetching";
-import ProjectText from "@/components/ProjectText";
+import { getProjects, getProjectById} from "@/lib/fetching";
+import ProjectTitle from "@/components/ProjectTitle";
 import ProjectNav from "@/components/ProjectNav";
 
 
@@ -10,7 +10,7 @@ import ProjectNav from "@/components/ProjectNav";
 
 export async function generateStaticParams() {
 
-  const projects = await getAllProjects()
+  const projects = await getProjects()
 
   
   return projects.map((project) => ({
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 
   
 }
-
+ 
 
 export default async function Page({params}) {
 
@@ -27,17 +27,10 @@ const project = await getProjectById(params.id)
 
 
   return (
-    <div className="flex flex-col justify-center items-center w-full min-h-screen bg-slate-200">
+    <div className="flex flex-col w-full h-screen bg-slate-200">
       <ProjectNav/>
-      <div className=" w-full h-3/4 p-10 mt-10">
+      <ProjectTitle namePT={project[0].namePT}  nameEN={project[0].nameEN}  />
       <ProjectSlide images={project[0].images}/>
-      </div>
-      <div >
-      <ProjectText  namePT={project[0].namePT} 
-                    nameEN={project[0].nameEN} 
-                    descriptionPT={project[0].descriptionPT} 
-                    descriptionEN={project[0].descriptionEN}/>
-      </div>
     </div>
   )
 }

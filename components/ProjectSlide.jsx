@@ -14,7 +14,7 @@ export default function ProjectSlide({ images }) {
   
 
   return (
-    <>
+    <div className=" w-full p-5 md:p-10">
       <Swiper
         style={{ "--swiper-navigation-color": "#000000", "--swiper-pagination-color": "#000000" }}
         loop={true}
@@ -22,11 +22,11 @@ export default function ProjectSlide({ images }) {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="w-full h-96"
+        className="w-full h-96 md:h-full"
       >
         {images.map((image) => (
-          <SwiperSlide key={image._key} className="text-center font-size-18 bg-slate-200 flex justify-center items-center">
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain" />
+          <SwiperSlide key={image._key} >
+            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain " />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -38,14 +38,13 @@ export default function ProjectSlide({ images }) {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="w-full h-20 box-border p-10"
       >
         {images.map((image) => (
-          <SwiperSlide key={image._key} className="w-1/4 h-full opacity-40">
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover hover:cursor-pointer" />
+          <SwiperSlide key={image._key} className="w-full h-full opacity-50">
+            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover hover:cursor-pointer hover:scale-95 duration-300" />
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

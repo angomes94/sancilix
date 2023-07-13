@@ -43,7 +43,7 @@ export default function Contacts() {
                             id="user_name"
                             type="text"
                             name="from_name"
-                            placeholder="John Doe"
+                            placeholder="Maria Inês"
                             required
                         />
                     </div>
@@ -56,7 +56,7 @@ export default function Contacts() {
                             id="user_email"
                             type="email"
                             name="email_id"
-                            placeholder="johndoe@example.com"
+                            placeholder="mariaines@example.com"
                             required
                         />
                     </div>
