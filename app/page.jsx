@@ -13,6 +13,7 @@ import Team from '@/components/Team';
 
 
 
+
 export default async function HomePage() {
 
 
@@ -23,12 +24,12 @@ export default async function HomePage() {
   const teamPortraits = await getTeamPortraits()
 
 
-  
+
 
 
   return (
     <div className=' flex flex-col w-full justify-center items-center bg-slate-200'>
-      <Navbar/>
+      <Navbar />
       <div className=' relative w-full'>
         <Slogan />
         <div className=' flex  w-full '>
@@ -39,8 +40,8 @@ export default async function HomePage() {
       <div className=' flex flex-col justify-center items-center text-center'>
         <AboutUs teamPortraits={teamPortraits} />
       </div>
-      <Team teamPortraits={teamPortraits}/>
-      <Projects projects={projects} renovations={renovations}/>
+      <Team teamPortraits={teamPortraits} />
+      <Projects projects={projects} renovations={renovations} />
       <Contacts />
     </div>
   )

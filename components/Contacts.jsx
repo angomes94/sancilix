@@ -1,38 +1,41 @@
 "use client";
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import emailjs from "@emailjs/browser";
 import { LanguageContext } from '@/app/context/languangeContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Contacts() {
 
     const { translations } = useContext(LanguageContext);
 
-    const sendEmail = (e) => {
-        /* e.preventDefault();
+    const form = useRef();
 
-        emailjs
-            .sendForm(
+    const sendEmail = (e) => {
+         e.preventDefault();
+
+        emailjs.sendForm(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
                 form.current,
                 process.env.NEXT_PUBLIC_EMAILJS_API_KEY
             )
             .then(
-                (result) => {
-                    console.log(result.text);
-                    console.log("message sent");
+                () => {
+                    toast.success(translations.formSuccess);
+                    form.current.reset();
                 },
-                (error) => {
-                    console.log(error.text);
+                () => {
+                    toast.error(translations.formError);
+                   
                 }
-            );*/
+            );
     };
 
 
     return (
         <div id='contacts' className=' flex flex-col md:flex-row text-white bg-blue-950 w-full justify-center items-center md:p-10 pt-5'>
             <div className=' flex md:flex-1 w-full pb-10'>
-                <form id="contact" onSubmit={sendEmail} className="max-w-lg w-full px-5">
+                <form id="contact" ref={form} onSubmit={sendEmail} className="max-w-lg w-full px-5">
                     <h1 className='text-center text-lg font-extralight'>{translations.formTitle}</h1>
                     <div className="mb-4">
                         <label className="block text-white font-bold mb-2" htmlFor="user_name">
@@ -92,7 +95,7 @@ export default function Contacts() {
                 <h1>{translations.email}<span className=' font-thin'>{translations.emailAddress} </span></h1>
                 </div>
             </div>
-
+            <Toaster />
         </div>
 
     )

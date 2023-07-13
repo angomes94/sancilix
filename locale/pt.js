@@ -17,8 +17,8 @@ export const translations = {
   buttonRenovations: "Renovações",
   team1Title: 'André Felix',
   team1Span: " - Arquiteto",
-  slideBefore: "antes",
-  slideAfter: "depois",
+  slideBefore: "Antes",
+  slideAfter: "Depois",
   getInTouch: "Contactos",
   contact: "Contacto: ",
   email: "E-mail: ",
@@ -31,5 +31,7 @@ export const translations = {
   formName: "Nome",
   formMessage: "Mensagem",
   formButton: "Enviar",
-  formPlaceHolder: "Escreva aqui a sua mensagem"
+  formPlaceHolder: "Escreva aqui a sua mensagem",
+  formSuccess: "Mensagem enviada",
+  formError: "Ocurreu um erro no envio"
 };
