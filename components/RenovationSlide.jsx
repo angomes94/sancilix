@@ -32,11 +32,11 @@ export default function RenovationSlide({ imagePairs }) {
         {imagePairs.map((pair, index) => (
           <SwiperSlide key={index}>
             <div className="w-full h-full flex flex-col md:flex-row justify-center items-center md:p-20">
-              <div className="w-1/2 h-full md:h-1/2 md:w-full md:pr-2">
+              <div className="w-1/2 h-full md:h-1/2 md:w-full md:mr-2">
                 <h1 className="font-semibold text-xl text-center pb-3 ">{translations.slideBefore}</h1>
                 <img src={urlFor(pair.before).fit('crop').width(600).height(500).url()} className="w-full h-full object-contain" />
               </div>
-              <div className="w-1/2 h-full md:h-1/2 md:w-full md:pl-2">
+              <div className="w-1/2 h-full md:h-1/2 md:w-full md:ml-2">
                 <h1 className="font-semibold text-xl text-center pb-3 ">{translations.slideAfter}</h1>
                 <img src={urlFor(pair.after).fit('crop').width(600).height(500).url()} className="w-full h-full object-contain" />
               </div>
