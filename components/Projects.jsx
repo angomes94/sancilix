@@ -35,14 +35,11 @@ export default function Projects({ projects, renovations }) {
 
         <div className=' grid grid-cols-1 gap-10 m-10 sm:grid-cols-2 md:grid-cols-2 '>
         {renovations && renovations.map((p) => (
-          <Link key={p._id} href={`/renovation/${p._id}`} className=' duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
-            <GridThumbnail projectName={p.name} projectImages={p.images} projectDescription={p.description} />
+          <Link key={p._id} href={`/renovation/${p._id}`} className='duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
+            <GridThumbnail projectName={p.name} projectImages={p.imagePairs.map(pair => pair.after)} projectDescription={p.description} />
           </Link>
         ))}
         </div>
-
-        
-
       }
       </div>
   )

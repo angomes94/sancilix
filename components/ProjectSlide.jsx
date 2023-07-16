@@ -26,7 +26,7 @@ export default function ProjectSlide({ images }) {
       >
         {images.map((image) => (
           <SwiperSlide key={image._key} >
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-contain md:p-20 " />
+            <img src={urlFor(image.asset).fit('crop').width(600).height(500).url()} className="w-full h-full object-contain md:p-20 " />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -41,7 +41,7 @@ export default function ProjectSlide({ images }) {
       >
         {images.map((image) => (
           <SwiperSlide key={image._key} className="w-full h-full opacity-50">
-            <img src={urlFor(image.asset).url()} className="w-full h-full object-cover hover:cursor-pointer hover:scale-95 duration-300" />
+            <img src={urlFor(image.asset).fit('crop').width(600).height(500).url()} className="w-full h-full object-cover hover:cursor-pointer hover:scale-95 duration-300" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -23,7 +23,7 @@ export default function GridThumbnail({projectName , projectImages}) {
       >
         {projectImages.map((image, index) => (
         <SwiperSlide key={index}>
-          <img src={urlFor(image.asset).url()} alt={projectName} />
+          <img  src={urlFor(image.asset).fit('crop').width(600).height(500).url()} alt={projectName} />
         </SwiperSlide>
       ))}
       </Swiper>

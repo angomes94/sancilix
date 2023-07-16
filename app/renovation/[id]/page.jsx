@@ -27,7 +27,7 @@ export default async function Page({ params }) {
         <div className="flex flex-col w-full min-h-screen bg-slate-200">
             <ProjectNav />
             <ProjectTitle namePT={project[0].namePT}  nameEN={project[0].nameEN}  />
-            <RenovationSlide images={project[0].images} />
+            <RenovationSlide imagePairs={project[0].imagePairs} />
         </div>
     )
 }

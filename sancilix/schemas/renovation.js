@@ -15,18 +15,28 @@ export default {
         validation: (Rule) => Rule.required().max(100),
       },
       {
-        name: 'images',
-        title: 'Images',
+        name: 'imagePairs',
+        title: 'Image Pairs',
         type: 'array',
         of: [
           {
-            type: 'image',
-            options: {
-              hotspot: true,
-            },
+            type: 'object',
+            fields: [
+              {
+                name: 'before',
+                title: 'Before',
+                type: 'image',
+                
+              },
+              {
+                name: 'after',
+                title: 'After',
+                type: 'image',
+                
+              },
+            ],
           },
         ],
-        validation: (Rule) => Rule.required().min(1),
       },
     ],
   };
