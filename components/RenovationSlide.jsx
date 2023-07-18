@@ -23,13 +23,12 @@ export default function RenovationSlide({ imagePairs }) {
         loop={true}
         navigation={true}
         modules={[FreeMode, Navigation]}
-        className="w-full h-screen "
+        className="w-full h-[100vh] "
 
       >
         {imagePairs.map((pair, index) => (
-          <SwiperSlide key={index}>
-            <>
-              <div className="w-full h-full flex flex-col pb-10 md:px-20">
+          <SwiperSlide key={index}> 
+              <div className="w-full h-full flex flex-col justify-center items-center pb-10 md:px-20">
                 <div className="w-full h-1/2 p-2 md:p-10">
                   <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideBefore}</h1>
                   <img src={urlFor(pair.before).fit('clip').width(2000).height(1000).url()} className="w-full h-full object-contain" />
@@ -39,7 +38,6 @@ export default function RenovationSlide({ imagePairs }) {
                   <img src={urlFor(pair.after).fit('clip').width(2000).height(1000).url()} className="w-full h-full object-contain" />
                 </div>
               </div>
-            </>
           </SwiperSlide>
         ))}
       </Swiper>
