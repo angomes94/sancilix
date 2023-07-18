@@ -39,7 +39,7 @@ export default function SlideShow({ images }) {
       >
         {(images?.map((image, index) => (
           <SwiperSlide key={index}>
-            <img className=" object-contain w-full h-full" src={urlFor(image.asset).fit('crop').width(1200).height(600).url()} />
+            <img className=" object-contain w-full h-full" src={urlFor(image.asset).fit('clip').width(1200).height(600).url()} />
           </SwiperSlide>
         )))}
       </Swiper>
