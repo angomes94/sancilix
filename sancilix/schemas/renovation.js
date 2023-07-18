@@ -26,13 +26,17 @@ export default {
                 name: 'before',
                 title: 'Before',
                 type: 'image',
-                
+                options: {
+                  hotspot: true,
+                }, 
               },
               {
                 name: 'after',
                 title: 'After',
                 type: 'image',
-                
+                options: {
+                  hotspot: true,
+                },           
               },
             ],
           },

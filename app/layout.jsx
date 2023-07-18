@@ -11,11 +11,12 @@ config.autoAddCss = false;
 export const metadata = {
   title: 'Sancilix',
   description: 'Sancilix - Specializing in residential and commercial projects. Quality craftsmanship, project management, design-build, renovations, and more. Bring your vision to life. Contact us today.',
-  keywords: "",
+  keywords: "construction, contractor, building, renovations, residential projects, commercial projects, craftsmanship, project management, design-build, construction services, building contractor, renovation specialist, construction company, quality construction, custom projects, home improvement, construction expertise, reliable contractor, building renovations, construction solutions",
   icons: {
     icon: '/logo.png',
   },
 }
+
 
 export default function RootLayout({ children }) {
   return (
