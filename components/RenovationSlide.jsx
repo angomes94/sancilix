@@ -23,7 +23,7 @@ export default function RenovationSlide({ imagePairs }) {
         loop={true}
         navigation={true}
         modules={[FreeMode, Navigation]}
-        className="w-full h-[100vh] "
+        className="w-full h-[100vh] md:h-[50vh] "
 
       >
         {imagePairs.map((pair, index) => (
