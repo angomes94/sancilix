@@ -2,6 +2,8 @@
 import React from 'react'
 import { urlFor } from '@/lib/sanityClient';
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
+
 
 import "swiper/css";
 import "swiper/css/effect-cube";
@@ -23,7 +25,11 @@ export default function GridThumbnail({projectName , projectImages}) {
       >
         {projectImages.map((image, index) => (
         <SwiperSlide key={index}>
-          <img  src={urlFor(image.asset).width(800).height(500).url()} alt={projectName} />
+          <Image  
+          src={urlFor(image.asset).fit("crop").width(800).height(500).url()} 
+          width={800}
+          height={500}
+          alt={index} />
         </SwiperSlide>
       ))}
       </Swiper>

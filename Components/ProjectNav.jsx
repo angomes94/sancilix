@@ -18,7 +18,7 @@ export default function ProjectNav() {
   return (
 
     <div className='flex flex-row justify-center items-center w-full px-10 pt-5 '>
-      <a href="/" onClick={handleLinkClick}>
+      <a href="/" onClick={handleLinkClick} className="text-2xl">
         <FontAwesomeIcon icon={faLeftLong} />
       </a>
       <div className=' grow'></div>
