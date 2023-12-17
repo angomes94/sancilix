@@ -12,7 +12,7 @@ import {Autoplay, EffectCube, Pagination } from "swiper";
 
 export default function GridThumbnail({projectName , projectImages}) {
   return (
-    <>
+    <div>
       <Swiper
         effect={"cube"}
         autoplay={{
@@ -23,10 +23,10 @@ export default function GridThumbnail({projectName , projectImages}) {
       >
         {projectImages.map((image, index) => (
         <SwiperSlide key={index}>
-          <img  src={urlFor(image.asset).fit('crop').width(800).height(500).url()} alt={projectName} />
+          <img  src={urlFor(image.asset).width(800).height(500).url()} alt={projectName} />
         </SwiperSlide>
       ))}
       </Swiper>
-    </>
+    </div>
   )
 }
