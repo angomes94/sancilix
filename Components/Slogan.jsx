@@ -2,7 +2,7 @@
 import React,{useContext} from 'react'
 import { LanguageContext } from '@/app/context/languangeContext'
 import { play } from '@/lib/fonts';
-import { motion, spring} from "framer-motion";
+import { motion} from "framer-motion";
 
 
 export default function Slogan() {
