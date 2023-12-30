@@ -4,24 +4,23 @@ import { urlFor } from '@/lib/sanityClient';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
-import "swiper/css";
-import "swiper/css/effect-cube";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
+import { Navigation } from "swiper";
 
-import { Autoplay, EffectCube } from "swiper";
 
 export default function GridThumbnail({ projectImages }) {
   return (
     <>
       <Swiper
-        effect={"cube"}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
+        spaceBetween={30}
         centeredSlides={true}
-        modules={[Autoplay, EffectCube,]}
+        navigation={true}
+        modules={[Navigation]}
+        style={{ "--swiper-navigation-color": "#000" }}
+        className="rounded-xl"
       >
         {projectImages.map((image, index) => (
           <SwiperSlide key={index}>
