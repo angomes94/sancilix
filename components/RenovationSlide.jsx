@@ -36,11 +36,11 @@ export default function RenovationSlide({ imagePairs }) {
             <div className={`w-full h-screen flex justify-center items-center pb-10 md:px-20 ${isImageLandscape(urlFor(pair.before).url()) ? "flex-col" : "flex-row"}`}>
               <div className={`${isImageLandscape(urlFor(pair.before).url()) ? "w-full h-[50vh]  " : "w-[50vw] h-full"} p-2 md:p-10`}>
                 <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideBefore}</h1>
-                <img src={`${isImageLandscape(urlFor(pair.before).url()) ? urlFor(pair.before).fit('clip').width(2000).height(1000).url() : urlFor(pair.before).url()}`} className="w-full h-full object-contain" />
+                <img src={`${isImageLandscape(urlFor(pair.before).url()) ? urlFor(pair.before).fit('clip').width(1000).height(500).url() : urlFor(pair.before).url()}`} className="w-full h-full object-contain" />
               </div>
               <div className={`${isImageLandscape(urlFor(pair.before).url()) ? "w-full h-[50vh]  " : "w-[50vw] h-full"} p-2 md:p-10`}>
                 <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideAfter}</h1>
-                <img src={`${isImageLandscape(urlFor(pair.before).url()) ? urlFor(pair.after).fit('clip').width(2000).height(1000).url() : urlFor(pair.after).url()}`} className="w-full h-full object-contain" />
+                <img src={`${isImageLandscape(urlFor(pair.before).url()) ? urlFor(pair.after).fit('clip').width(1000).height(500).url() : urlFor(pair.after).url()}`} className="w-full h-full object-contain" />
               </div>
             </div>
           </SwiperSlide>
