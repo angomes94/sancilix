@@ -29,18 +29,18 @@ export default function RenovationSlide({ imagePairs }) {
       style={{ "--swiper-navigation-color": "#172554", "--swiper-pagination-color": "#172554" }}
       navigation={true}
       modules={[Navigation]}
-      className="w-full h-screen "
+      className="w-full h-[100vh] "
     >
       {imagePairs.map((pair, index) => (
         <SwiperSlide key={index}>
           <div className={`w-full h-screen flex justify-center items-center pb-10 md:px-20 ${isImageLandscape(urlFor(pair.before).url()) ? "flex-col" : "flex-row"}`}>              
           <div className={`${isImageLandscape(urlFor(pair.before).url()) ? "w-full h-[50vh]  " : "w-[50vw] h-full"} p-2 md:p-10`}>
             <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideBefore}</h1>
-            <img src={urlFor(pair.before).fit('clip').url()} className="w-full h-full object-contain" />
+            <img src={urlFor(pair.before).fit('max').url()} className="w-full h-full object-contain" />
           </div>
             <div className={`${isImageLandscape(urlFor(pair.before).url()) ? "w-full h-[50vh]  " : "w-[50vw] h-full"} p-2 md:p-10`}>
               <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideAfter}</h1>
-              <img src={urlFor(pair.after).fit('clip').url()} className="w-full h-full object-contain" />
+              <img src={urlFor(pair.after).fit('max').url()} className="w-full h-full object-contain" />
             </div>
           </div>
         </SwiperSlide>
