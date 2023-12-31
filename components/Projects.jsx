@@ -25,7 +25,7 @@ export default function Projects({ projects, renovations }) {
       {isProjectsTab ? 
       <div className=' grid grid-cols-1 gap-10 m-10 sm:grid-cols-2 md:grid-cols-2 '>
         {projects && projects.map((p) => (
-          <Link key={p._id} href={`/project/${p._id}`} className=' duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
+          <Link key={p._id} href={`/project/${p._id}`} className='flex justify-center items-center duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
             <GridThumbnail projectName={p.name} projectImages={p.images} projectDescription={p.description} />
           </Link>
         ))}
@@ -33,9 +33,9 @@ export default function Projects({ projects, renovations }) {
 
         :
 
-        <div className=' grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 '>
+        <div className=' grid grid-cols-1 gap-10 m-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 '>
         {renovations && renovations.map((p) => (
-          <Link key={p._id} href={`/renovation/${p._id}`} className='duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
+          <Link key={p._id} href={`/renovation/${p._id}`} className='flex justify-center items-center duration-300 hover:scale-110 hover:opacity-100 opacity-75 cursor-pointer'>
             <GridThumbnail projectName={p.name} projectImages={p.imagePairs.map(pair => pair.after)} projectDescription={p.description} />
           </Link>
         ))}
