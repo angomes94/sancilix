@@ -24,7 +24,9 @@ export default function GridThumbnail({ projectImages }) {
       >
         {projectImages.map((image, index) => (
           <SwiperSlide key={index}>
+            <div className='flex justify-center items-center'>
             <img src={urlFor(image.asset).fit("crop").width(800).height(500).url()} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
