@@ -29,7 +29,7 @@ export default function RenovationSlide({ imagePairs }) {
         style={{ "--swiper-navigation-color": "#172554", "--swiper-pagination-color": "#172554" }}
         navigation={true}
         modules={[Navigation]}
-        className="w-full h-[100vh] "
+        className=" w-full"
       >
         {imagePairs.map((pair, index) => (
           <SwiperSlide key={index}>
