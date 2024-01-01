@@ -7,7 +7,7 @@ export default function ProjectTitle({namePT, nameEN}) {
     const {language} = useContext(LanguageContext);
 
   return (
-    <div className=" flex flex-col justify-center items-center w-full ">
+    <div className=" flex justify-center items-center w-full ">
         {language === "PT" ? 
         ( <div>
             <h1 className='py-5 text-2xl underline underline-offset-8 ' >{namePT}</h1>
