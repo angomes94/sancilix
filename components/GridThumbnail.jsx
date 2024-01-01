@@ -20,7 +20,7 @@ export default function GridThumbnail({ projectImages }) {
         navigation={true}
         modules={[Navigation]}
         style={{ "--swiper-navigation-color": "#000" }}
-        className="w-full"
+        className="w-full flex justify-center items-center"
       >
         {projectImages.map((image, index) => (
           <SwiperSlide key={index} className="h-full flex justify-center items-center">     
