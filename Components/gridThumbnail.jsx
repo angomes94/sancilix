@@ -22,8 +22,10 @@ export default function GridThumbnail({ projectImages }) {
         style={{ "--swiper-navigation-color": "#000" }}
       >
         {projectImages.map((image, index) => (
-          <SwiperSlide key={index}>     
-            <img src={urlFor(image.asset).fit("crop").width(800).height(500).url()} className="rounded-xl" />
+          <SwiperSlide key={index}>
+            <div className='w-full flex justify-center items-center'>
+              <img src={urlFor(image.asset).fit("crop").width(800).height(500).url()} className="rounded-xl" />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
