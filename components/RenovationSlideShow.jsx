@@ -19,10 +19,16 @@ export default function RenovationSlideShow({ imagePairs }) {
 
 
     return (
-        <div className=" w-full flex flex-row justify-center items-center  ">
-            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} className="  bg-slate-200 opacity-50  text-4xl px-4 py-2 ml-2 rounded transition duration-300 active:scale-95 hover:opacity-100 ">
+        <div className=" w-full flex flex-col justify-center items-center  ">
+            <div className="w-full flex flex-row ">
+            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} className=" bg-slate-200 opacity-50  text-4xl px-4 py-2 ml-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
+            <div className="flex flex-1"></div>
+            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} className=" bg-slate-200 opacity-50 text-4xl px-4 py-2 mr-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
+                <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+            </div>
             <div className="w-full h-full relative  ">
                 {imagePairs.map((pair, index) => (
                     <motion.div
@@ -53,10 +59,6 @@ export default function RenovationSlideShow({ imagePairs }) {
                 ))}
             </div>
             
-
-            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} className=" bg-slate-200 opacity-50  text-4xl px-4 py-2 mr-2 rounded transition duration-300 active:scale-95 hover:opacity-100 ">
-                <FontAwesomeIcon icon={faChevronRight} />
-            </button>
         </div>
 
     );
