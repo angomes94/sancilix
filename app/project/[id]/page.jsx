@@ -27,7 +27,7 @@ const project = await getProjectById(params.id)
 
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-slate-200">
+    <div className="flex flex-col w-full min-h-screen ">
       <ProjectNav/>
       <ProjectTitle namePT={project[0].namePT}  nameEN={project[0].nameEN}  />
       <ProjectSlide images={project[0].images}/>

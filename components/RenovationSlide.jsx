@@ -7,7 +7,6 @@ import { Navigation } from "swiper";
 import { urlFor } from "@/lib/sanityClient";
 import { getImageDimensions } from '@sanity/asset-utils'
 import { LanguageContext } from "@/app/context/languangeContext";
-import { filterProps } from "framer-motion";
 
 export default function RenovationSlide({ imagePairs }) {
 
@@ -39,7 +38,7 @@ export default function RenovationSlide({ imagePairs }) {
                 <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideBefore}</h1>
                 <img src={urlFor(pair.before).url()} alt="before" className=" rounded-xl object-contain max-w-[1000px] max-h-[800px] "/>
               </div>
-              <div className=" flex flex-col flex-1 justify-center items-center max-w-[1500px] p-2 md:p-5 ">
+              <div className=" flex flex-col flex-1 justify-center items-center p-2 md:p-5 ">
                 <h1 className="font-semibold text-xl text-center pb-5 ">{translations.slideAfter}</h1>
                 <img src={urlFor(pair.after).url()} alt="after" className=" rounded-xl object-contain max-w-[1000px] max-h-[800px]" />
               </div>

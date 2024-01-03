@@ -28,7 +28,7 @@ export default async function HomePage() {
 
 
   return (
-    <div className=' flex flex-col w-full justify-center items-center bg-slate-200'>
+    <div className=' flex flex-col w-full justify-center items-cente'>
       <Navbar />
       <div className=' relative w-full'>
         <Slogan />

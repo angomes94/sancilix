@@ -34,6 +34,7 @@
     "react-flags-select": "^2.2.3",
     "react-hot-toast": "^2.4.1",
     "react-i18next": "^12.2.2",
+    "react-slideshow-image": "^4.3.0",
     "react-spinners": "^0.13.8",
     "server-only": "^0.0.1",
     "swiper": "^9.4.1",
