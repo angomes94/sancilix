@@ -21,13 +21,13 @@ export default function RenovationSlideShow({ imagePairs }) {
     return (
         <div className=" w-full flex flex-col justify-center items-center  ">
             <div className="w-full flex flex-row ">
-            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} className=" bg-slate-200 opacity-50  text-4xl px-4 py-2 ml-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
-                <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-            <div className="flex flex-1"></div>
-            <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} className=" bg-slate-200 opacity-50 text-4xl px-4 py-2 mr-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
-                <FontAwesomeIcon icon={faChevronRight} />
-            </button>
+                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} className=" bg-slate-200 opacity-50  text-4xl px-4 py-2 ml-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+                <div className="flex flex-1"></div>
+                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} className=" bg-slate-200 opacity-50 text-4xl px-4 py-2 mr-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
+                    <FontAwesomeIcon icon={faChevronRight} />
+                </button>
             </div>
             <div className="w-full h-full relative  ">
                 {imagePairs.map((pair, index) => (
@@ -38,9 +38,15 @@ export default function RenovationSlideShow({ imagePairs }) {
                         transition={{ duration: 0.5 }}
                         className={`absolute w-full flex justify-center items-center pb-10 p-2 md:px-20 ${isImageLandscape(urlFor(pair.before).url()) ? "flex-col" : "flex-row"}`}
                     >
-
                         <div className="flex flex-col justify-center items-center p-2 md:p-5">
-                            <h1 className="font-semibold text-xl text-center pb-5">{translations.slideBefore}</h1>
+                            <h1 style={{
+                                fontWeight: '600', // equivalent to font-semibold
+                                fontSize: '1.25rem', // equivalent to text-xl
+                                textAlign: 'center', // equivalent to text-center
+                                paddingBottom: '1.25rem' // equivalent to pb-5
+                            }}>
+                                {translations.slideBefore}
+                            </h1>
                             <img
                                 src={urlFor(pair.before).url()}
                                 alt="before"
@@ -58,7 +64,7 @@ export default function RenovationSlideShow({ imagePairs }) {
                     </motion.div>
                 ))}
             </div>
-            
+
         </div>
 
     );
