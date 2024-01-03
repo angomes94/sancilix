@@ -7,7 +7,6 @@ import { LanguageContext } from "@/app/context/languangeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function RenovationSlideShow({ imagePairs }) {
     const { translations } = useContext(LanguageContext);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,56 +16,90 @@ export default function RenovationSlideShow({ imagePairs }) {
         return width > height;
     };
 
+    const buttonStyle = {
+        backgroundColor: '#718096',
+        opacity: '0.5',
+        fontSize: '2.25rem',
+        padding: '0.5rem 1rem',
+        borderRadius: '0.375rem',
+        transition: 'opacity 0.3s, transform 0.3s',
+        ':hover': {
+            opacity: '1',
+            transform: 'scale(0.95)'
+        }
+    };
 
     return (
-        <div className=" w-full flex flex-col justify-center items-center  ">
-            <div className="w-full flex flex-row ">
-                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} className=" bg-slate-200 opacity-50  text-4xl px-4 py-2 ml-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
+        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide - 1 + imagePairs.length) % imagePairs.length)} style={buttonStyle}>
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
-                <div className="flex flex-1"></div>
-                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} className=" bg-slate-200 opacity-50 text-4xl px-4 py-2 mr-2 rounded-lg transition duration-300 active:scale-95 hover:opacity-100 ">
+                <div style={{ flex: 1 }}></div>
+                <button onClick={() => setCurrentSlide((prevSlide) => (prevSlide + 1) % imagePairs.length)} style={buttonStyle}>
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>
-            <div className="w-full h-full relative  ">
+            <div style={{ width: '100%', height: '100%', position: 'relative' }}>
                 {imagePairs.map((pair, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: index === currentSlide ? 1 : 0 }}
                         animate={{ opacity: index === currentSlide ? 1 : 0 }}
                         transition={{ duration: 0.5 }}
-                        className={`absolute w-full flex justify-center items-center pb-10 p-2 md:px-20 ${isImageLandscape(urlFor(pair.before).url()) ? "flex-col" : "flex-row"}`}
+                        style={{
+                            position: 'absolute',
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '0.5rem 2rem',
+                            ...(isImageLandscape(urlFor(pair.before).url()) ? { flexDirection: 'column' } : { flexDirection: 'row' })
+                        }}
                     >
-                        <div className="flex flex-col justify-center items-center p-2 md:p-5">
+                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem 1rem' }}>
                             <h1 style={{
-                                fontWeight: '600', // equivalent to font-semibold
-                                fontSize: '1.25rem', // equivalent to text-xl
-                                textAlign: 'center', // equivalent to text-center
-                                paddingBottom: '1.25rem' // equivalent to pb-5
+                                fontWeight: '600',
+                                fontSize: '1.25rem',
+                                textAlign: 'center',
+                                paddingBottom: '1.25rem'
                             }}>
                                 {translations.slideBefore}
                             </h1>
                             <img
                                 src={urlFor(pair.before).url()}
                                 alt="before"
-                                className={`rounded-xl object-contain  ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px]" : "max-h-full w-auto md:max-h-[600px]"}`}
+                                style={{
+                                    borderRadius: '0.75rem',
+                                    objectFit: 'contain',
+                                    ...(isImageLandscape(urlFor(pair.before).url()) ? { maxWidth: '100%', height: 'auto' } : { maxHeight: '100%', width: 'auto' })
+                                }}
                             />
                         </div>
-                        <div className="flex flex-col justify-center items-center p-2 md:p-5">
-                            <h1 className="font-semibold text-xl text-center pb-5">{translations.slideAfter}</h1>
+                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem 1rem' }}>
+                            <h1 style={{
+                                fontWeight: '600',
+                                fontSize: '1.25rem',
+                                textAlign: 'center',
+                                paddingBottom: '1.25rem'
+                            }}>
+                                {translations.slideAfter}
+                            </h1>
                             <img
                                 src={urlFor(pair.after).url()}
                                 alt="after"
-                                className={`rounded-xl object-contain  ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px]" : "max-h-full w-auto md:max-h-[600px]"}`}
+                                style={{
+                                    borderRadius: '0.75rem',
+                                    objectFit: 'contain',
+                                    ...(isImageLandscape(urlFor(pair.before).url()) ? { maxWidth: '100%', height: 'auto' } : { maxHeight: '100%', width: 'auto' })
+                                }}
                             />
                         </div>
                     </motion.div>
                 ))}
             </div>
-
         </div>
-
     );
 }
+
 
