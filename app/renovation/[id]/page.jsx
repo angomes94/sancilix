@@ -1,7 +1,7 @@
 import { getRenovations, getProjectById } from "@/lib/fetching";
 import ProjectNav from "@/components/ProjectNav";
 import ProjectTitle from "@/components/ProjectTitle";
-import RenovationSlideShow from "@/components/RenovationSlideShow";
+import RenovationSlide from "@/components/RenovationSlide";
 
 
 
@@ -28,7 +28,7 @@ export default async function Page({ params }) {
         <div className=" flex flex-col w-full min-h-screen">
             <ProjectNav />
             <ProjectTitle namePT={project[0].namePT}  nameEN={project[0].nameEN}  />
-            <RenovationSlideShow imagePairs={project[0].imagePairs} />
+            <RenovationSlide imagePairs={project[0].imagePairs} />
         </div>
     )
 }
