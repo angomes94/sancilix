@@ -29,7 +29,7 @@ export default function RenovationSlideShow({ imagePairs }) {
                 <FontAwesomeIcon icon={faChevronRight} />
             </button>
             </div>
-            <div className="w-full h-full relative  ">
+            <div className="w-full h-full relative ">
                 {imagePairs.map((pair, index) => (
                     <motion.div
                         key={index}
@@ -44,7 +44,7 @@ export default function RenovationSlideShow({ imagePairs }) {
                             <img
                                 src={urlFor(pair.before).url()}
                                 alt="before"
-                                className={`rounded-xl object-contain ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px] lg:max-w-[800px]" : "max-h-full w-auto md:max-h-[600px] lg:max-h-[800px]"}`}
+                                className={`rounded-xl object-contain ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px] lg:max-w-[800px]" : "max-h-full  md:max-h-[600px] lg:max-h-[800px]"}`}
                             />
                         </div>
                         <div className="flex flex-col justify-center items-center p-2 md:p-5">
@@ -52,7 +52,7 @@ export default function RenovationSlideShow({ imagePairs }) {
                             <img
                                 src={urlFor(pair.after).url()}
                                 alt="after"
-                                className={`rounded-xl object-contain  ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px] lg:max-w-[800px]" : "max-h-full w-auto md:max-h-[600px] lg:max-h-[800px]"}`}
+                                className={`rounded-xl object-contain  ${isImageLandscape(urlFor(pair.before).url()) ? "max-w-full h-auto md:max-w-[600px] lg:max-w-[800px]" : "max-h-full  md:max-h-[600px] lg:max-h-[800px]"}`}
                             />
                         </div>
                     </motion.div>
